@@ -28,7 +28,6 @@ void FindNextPermutation(char a[],int len)
   }
   char *pEnd = a + len;
   char *p , *q , *pFind;
-  pEnd--;
   p = pEnd;
   while(p!=a)
   {
@@ -54,7 +53,14 @@ void FindNextPermutation(char a[],int len)
 
 int main()
 {
-  char str[] = "21543";
+  char str[] = "1234";
+  char end[] = "4321";
   int  len   = sizeof(str) - 2;
-  FindNextPermutation(str,len);
+  FindNextPermutation(str,len);  
+  
+  do
+  {
+    FindNextPermutation(str,len);  
+  }while(0!=strcmp(str,end));
+
 }
